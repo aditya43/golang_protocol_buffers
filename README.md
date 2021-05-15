@@ -36,3 +36,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - We cannot use numbers between `19000` to `19999`. These are reserved by Google for special use.
 - Tags numbered from `1` to `15` use `1 byte` in space, so use them for frequently populated fields.
 - For fields those are less populated, use Tag numbers from `16` to `2024`. They use `2 bytes` in space.
+
+-----------
+
+## Repeated Fields:
+- To make a `list` or an `array`, we can use a concept of `Repeated Fields`.
+- The list can take any number (0 or more) of elements we want.
+- The opposite of `repeated` is `singular` (We don't write it).
