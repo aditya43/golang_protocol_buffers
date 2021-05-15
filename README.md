@@ -43,3 +43,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - To make a `list` or an `array`, we can use a concept of `Repeated Fields`.
 - The list can take any number (0 or more) of elements we want.
 - The opposite of `repeated` is `singular` (We don't write it).
+
+-----------
+
+## Enums:
+- If we know all the values a field can take in advance, we can leverage an `Enum` type.
+- **The first value of an `Enum` is the Default value.**
+- `Enum` must start by the tag `0` (which is the default value).
