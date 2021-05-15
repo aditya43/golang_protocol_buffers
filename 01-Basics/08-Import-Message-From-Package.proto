@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "01-Basics/07-Date-In-Package.proto";
+
+package adi.person;
+
+message Person {
+    int32 age = 1;
+    string name = 2;
+
+    adi.date.Date birth_date = 3;
+}
