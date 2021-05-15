@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package address;
+option go_package = "address/address";
+
+message Address {
+    enum AddressType {
+        PERMANENT = 0; // Default value
+        TEMPORARY = 1;
+    }
+    AddressType address_type = 1;
+
+    string address_line_1 = 2;
+    string address_line_2 = 3;
+    string city = 4;
+    string country = 5;
+    string zip_code = 6;
+}

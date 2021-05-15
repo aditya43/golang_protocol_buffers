@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package person;
+option go_package = "person/person";
+
+message Person {
+    int32 age = 1;
+    string name = 2;
+
+    // Nested message type (Full Name: Person.Address)
+    message Address {
+        enum AddressType {
+            PERMANENT = 0; // Default value
+            TEMPORARY = 1;
+        }
+        AddressType address_type = 1;
+        string address_line_1 = 2;
+        string address_line_2 = 3;
+        string city = 4;
+        string country = 5;
+        string zip_code = 6;
+    }
+
+    // Multiple Addresses
+    repeated Address addresses = 3;
+}

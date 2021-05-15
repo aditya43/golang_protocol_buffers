@@ -50,3 +50,16 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - If we know all the values a field can take in advance, we can leverage an `Enum` type.
 - **The first value of an `Enum` is the Default value.**
 - `Enum` must start by the tag `0` (which is the default value).
+
+-----------
+
+## Generating Golang Code Using Protoc:
+- Following command is used to generate Golang code:
+```sh
+# Browse to the directory
+cd ~/work/Golang/golang_protocol_buffers/02-Protoc-To-Generate-Golang-Code
+
+# "-I" specifies source directory
+# "--go_out" specifies output directory
+protoc -I=proto --go_out=go proto/*.proto
+```
