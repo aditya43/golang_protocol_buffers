@@ -23,3 +23,5 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Code is generated for us automatically.
 
 ## Disadvantages of Protocol Buffers:
+- `Protobuf` support for some languages might be lacking (but the main ones are fine).
+- Can't open the serialized data with a text editor (because it's compressed an serialized).
