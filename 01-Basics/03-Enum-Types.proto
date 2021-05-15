@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Person {
+    int32 age = 1;
+    string name = 2;
+
+    // Enum type:
+    enum EyeColor {
+        UNKNOWN_COLOR = 0; // Default value
+        BROWN = 1;
+        BLACK = 2;
+        GREEN = 3;
+        BLUE = 4;
+    }
+    EyeColor eye_color = 3; // Notice the tag number
+}
