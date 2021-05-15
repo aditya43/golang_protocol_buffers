@@ -25,3 +25,14 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Disadvantages of Protocol Buffers:
 - `Protobuf` support for some languages might be lacking (but the main ones are fine).
 - Can't open the serialized data with a text editor (because it's compressed an serialized).
+
+-----------
+
+## Tags:
+- In protocol buffers, field names are not important! But when programming, fields/field names are important.
+- For `protobuf`, the important element is the `tag`.
+- Smallest Tag number we can have is `1`.
+- Largest Tag number we can have is `2²⁹-1` i.e. `536,870,911`.
+- We cannot use numbers between `19000` to `19999`. These are reserved by Google for special use.
+- Tags numbered from `1` to `15` use `1 byte` in space, so use them for frequently populated fields.
+- For fields those are less populated, use Tag numbers from `16` to `2024`. They use `2 bytes` in space.
