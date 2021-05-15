@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Person {
+    int32 age = 1;
+    string name = 2;
+
+    // Refers to "Date" message type
+    Date birth_date = 3;
+}
+
+message Date {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+}
