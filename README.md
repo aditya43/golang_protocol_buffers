@@ -59,7 +59,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 # Browse to the directory
 cd ~/work/Golang/golang_protocol_buffers/02-Protoc-To-Generate-Golang-Code
 
-# "-I" specifies source directory
-# "--go_out" specifies output directory
+# protoc: Compiler for protocol buffers
+# -I: specifies source directory where protocol buffer files are resided
+# --go_out: specifies output directory
+# At the end specify path to protocol buffer file(s)
 protoc -I=proto --go_out=go proto/*.proto
 ```
