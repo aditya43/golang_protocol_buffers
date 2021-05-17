@@ -103,3 +103,20 @@ protoc -I=proto --go_out=go proto/*.proto
     }
 ```
 - **Do not EVER remove any RESERVED tags!**
+
+-----------
+
+## oneof | Advanced Types:
+- We can use `oneof` to tell protocol buffers that only one field can have a value set to it. For e.g.:
+```proto
+    message HelloAditya {
+        int32 id = 1;
+
+        oneof some_name_field {
+            // In "some_name_field" either "name" or
+            // "first_name" field will have value set to it.
+            string name = 2;
+            string first_name = 3;
+        }
+    }
+```
