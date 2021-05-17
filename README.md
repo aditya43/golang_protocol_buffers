@@ -89,3 +89,17 @@ protoc -I=proto --go_out=go proto/*.proto
         int32 id = 1;
     }
 ```
+
+-----------
+
+## Reserved Keywords
+- We can reserve `TAGS` and `FIELD NAMES`.
+- We can't mix `TAGS` and `FIELD NAMES` in the same `reserved` statement. For e.g.
+```proto
+    // Correct way to use "reserved" keyword:
+    message Message {
+        reserved 2, 4, 15, 20 to 30;
+        reserved "first_name", "last_name";
+    }
+```
+- **Do not EVER remove any RESERVED tags!**
