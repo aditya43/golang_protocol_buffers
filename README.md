@@ -74,3 +74,18 @@ protoc -I=proto --go_out=go proto/*.proto
 - Likewise, if old/new code reads unknown data, the defaults will take place.
 - Fields can be removed as long as the tag number is not used again in our updated message type. We may want to field instead, perhaps adding the prefix `OBSOLUTE_`, or make the tag `reserved` so that future uses of our `.proto` can't accidentially reuse the number.
 - For changing data types (e.g. `int32` to `int643`) we must refer to the documentations.
+- **When removing a field, we must always `reserve` the tag and the field name!** For e.g.
+```proto
+    // Original Message
+    message Message {
+        int32 id = 1;
+        string first_name = 2;
+    }
+
+    // Lets remove field "first_name"
+    message Message {
+        reserved 2;            // Reserved tag number
+        reserved "first_name"; // Reserved field name
+        int32 id = 1;
+    }
+```
