@@ -65,3 +65,12 @@ cd ~/work/Golang/golang_protocol_buffers/02-Protoc-To-Generate-Golang-Code
 # At the end specify path to protocol buffer file(s)
 protoc -I=proto --go_out=go proto/*.proto
 ```
+
+-----------
+
+## Rules For Updating Protocol
+- Don't change the numeric tags for any existing fields.
+- We can add new fields, and old code will just ignore them.
+- Likewise, if old/new code reads unknown data, the defaults will take place.
+- Fields can be removed as long as the tag number is not used again in our updated message type. We may want to field instead, perhaps adding the prefix `OBSOLUTE_`, or make the tag `reserved` so that future uses of our `.proto` can't accidentially reuse the number.
+- For changing data types (e.g. `int32` to `int643`) we must refer to the documentations.
