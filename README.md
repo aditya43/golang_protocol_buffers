@@ -133,3 +133,20 @@ protoc -I=proto --go_out=go proto/*.proto
 ```
 - Map fields cannot be repeated.
 - THere's no ordering for map (its `key => value` store).
+
+-----------
+
+## Timestamp (Well Known Types) | Advanced Types:
+- Protocol Buffers contains a set of `Well Known Types`. For e.g. advanced types known to all programming languages.
+- Full list of `Well Known Types`: [https://developers.google.com/protocol-buffers/docs/reference/google.protobuf](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf)
+- One of the types is `Timestamp` - fields are `seconds` and `nanoseconds` (UTC).
+- Don't forget to use the `import` statement.
+- For e.g.
+```proto
+     syntax = "proto3";
+     import "google/protobuf/timestamp.proto";
+
+     message Sample {
+         google.protobuf.Timestamp my_timestamp = 1;
+     }
+```
