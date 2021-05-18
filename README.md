@@ -150,3 +150,21 @@ protoc -I=proto --go_out=go proto/*.proto
          google.protobuf.Timestamp my_timestamp = 1;
      }
 ```
+
+-----------
+
+## Duration (Well Known Types) | Advanced Types:
+- `Duration` is yet another `Well Known Type`.
+- It represents the time span between 2 timestamps.
+- Just like `Timestamp`, it contains `seconds` and `nanoseconds`.
+- For e.g.
+```proto
+    syntax = "proto3";
+
+    import "google/protobuf/timestamp.proto";
+    import "google/protobuf/duration.proto";
+        message Sample {
+         google.protobuf.Timestamp my_timestamp = 1;
+         google.protobuf.Duration validity = 2;
+     }
+```
