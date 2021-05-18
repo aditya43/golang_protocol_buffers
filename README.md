@@ -120,3 +120,16 @@ protoc -I=proto --go_out=go proto/*.proto
         }
     }
 ```
+
+-----------
+
+## Maps | Advanced Types:
+- Maps can be used to define scaler message types. It's like a `dictionary` in python or `structs` in go:
+```proto
+    message Message {
+        int32 id = 1;
+        map<string, Result> results = 2;
+    }
+```
+- Map fields cannot be repeated.
+- THere's no ordering for map (its `key => value` store).
