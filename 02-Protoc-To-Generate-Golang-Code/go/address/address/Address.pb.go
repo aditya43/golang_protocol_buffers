@@ -68,6 +68,7 @@ func (Address_AddressType) EnumDescriptor() ([]byte, []int) {
 
 type Address struct {
 	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	AddressType   Address_AddressType `protobuf:"varint,1,opt,name=address_type,json=addressType,proto3,enum=address.Address_AddressType" json:"address_type,omitempty"`
