@@ -41,7 +41,6 @@ var (
 
 func (x Address_AddressType) Enum() *Address_AddressType {
 	p := new(Address_AddressType)
-	*p = x
 	return p
 }
 
